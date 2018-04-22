@@ -270,7 +270,7 @@ He also painted "Starry Night," the painting you are looking at.</string>
                                 <rect key="frame" x="16" y="164" width="172" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Paul Cezanne painted &quot;Self Portrait in a Straw Hat&quot; in 1875-1876." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-0W-Vha">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Paul Cézanne painted &quot;Self Portrait in a Straw Hat&quot; in 1875-1876." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-0W-Vha">
                                 <rect key="frame" x="16" y="20" width="343" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

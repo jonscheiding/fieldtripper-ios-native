@@ -24,39 +24,30 @@ class CezanneViewController : ViewController {
     
     override func respondToImage(node: SCNNode, imageAnchor: ARImageAnchor) {
         let referenceImage = imageAnchor.referenceImage
-        let iconSize = referenceImage.physicalSize.width / 4
+        let referenceSize = referenceImage.physicalSize
+        let iconSize = referenceSize.width / 4
         let startPoint = CGPoint(
-            x: (-referenceImage.physicalSize.width / 2) + (iconSize / 2),
-            y: (referenceImage.physicalSize.height / 2) + (iconSize / 2))
+            x: (-referenceSize.width / 2) + (iconSize / 2),
+            y: (referenceSize.height / 2) + (iconSize / 2))
 
         self.referenceNode = node
         self.referenceImage = referenceImage
         
-        ["year1", "year2", "year3", "year4"]
+        let tipSize = CGSize(width: referenceSize.width, height: referenceSize.width * 0.368)
+        let tipPosition = SCNVector3Make(0, 0, -Float(referenceSize.height + tipSize.height) * 1.1 / 2.0)
+        self.addImage(name: "year", size: tipSize, position: tipPosition, node: node)
+        
+        ["year2", "year4", "year3", "year1"]
             .enumerated()
             .forEach { (index, name) in
-                let material = SCNMaterial()
-                material.diffuse.contents = UIImage(named: name)
-                
-                let plane = SCNPlane(width: iconSize * 0.8, height: iconSize * 0.8)
-                plane.materials = [material]
-                
-                let planeNode = SCNNode(geometry: plane)
-                planeNode.opacity = 0.6
-                
-                planeNode.position = SCNVector3(
-                    x: Float(startPoint.x - (iconSize * CGFloat(0.1)) + (iconSize * CGFloat(index))),
+                let size = CGSize(width: iconSize, height: iconSize)
+                let position = SCNVector3(
+                    x: Float(startPoint.x + (iconSize * CGFloat(index))),
                     y: 0,
-                    z: Float(startPoint.y + (iconSize * CGFloat(0.1))))
+                    z: Float(startPoint.y))
                 
-                /*
-                 `SCNPlane` is vertically oriented in its local coordinate space, but
-                 `ARImageAnchor` assumes the image is horizontal in its local space, so
-                 rotate the plane to match.
-                 */
-                planeNode.eulerAngles.x = -.pi / 2
-                planeNode.name = name
-                node.addChildNode(planeNode)
+                let planeNode = self.addImage(name: name, size: size, position: position, node: node)
+                planeNode.opacity = 0.6
         }
     }
     

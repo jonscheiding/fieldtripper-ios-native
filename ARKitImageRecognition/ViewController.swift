@@ -103,4 +103,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.statusViewController.showMessage("Detected image “\(imageName)”")
         }
     }
+    
+    func addImage(name: String, size: CGSize, position: SCNVector3, node: SCNNode) -> SCNNode {
+        let material = SCNMaterial()
+        let image = UIImage(named: name)
+        material.diffuse.contents = image
+        
+        let plane = SCNPlane(width: size.width, height: size.height)
+        plane.materials = [material]
+        
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = position
+        
+        /*
+         `SCNPlane` is vertically oriented in its local coordinate space, but
+         `ARImageAnchor` assumes the image is horizontal in its local space, so
+         rotate the plane to match.
+         */
+        planeNode.eulerAngles.x = -.pi / 2
+        planeNode.name = name
+        node.addChildNode(planeNode)
+        return planeNode
+    }
 }

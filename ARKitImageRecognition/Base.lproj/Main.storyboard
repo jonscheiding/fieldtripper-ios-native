@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="roX-dq-wUl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="-280.20989505247377"/>
         </scene>
-        <!--View Controller-->
+        <!--Van Gogh View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARKitImageRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="VanGoghViewController" customModule="ARKitImageRecognition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RLh-bf-1c3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.799999999999997" y="98.50074962518741"/>
+            <point key="canvasLocation" x="54" y="108"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iKB-Pm-mXc">
@@ -188,7 +188,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I LEARNED SOMETHING!"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="zm2-0k-1eb"/>
+                                    <segue destination="roX-dq-wUl" kind="show" id="7Yz-yE-cl2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,12 +198,115 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIp-2V-85n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.79999999999995" y="24.7376311844078"/>
+            <point key="canvasLocation" x="943" y="107"/>
+        </scene>
+        <!--Cezanne View Controller-->
+        <scene sceneID="phy-E3-sgJ">
+            <objects>
+                <viewController id="roX-dq-wUl" customClass="CezanneViewController" customModule="ARKitImageRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O8I-xd-LX2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbD-wS-EgB" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt1-V0-UA3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vGc-Wb-VgH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtD-Iy-EQq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="JRw-kf-nPE"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="ri3-7p-e6d" kind="embed" id="WdT-0t-CI2"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZbD-wS-EgB" firstAttribute="top" secondItem="O8I-xd-LX2" secondAttribute="top" id="3hQ-I1-WDZ"/>
+                            <constraint firstAttribute="bottom" secondItem="ZbD-wS-EgB" secondAttribute="bottom" id="4kM-fZ-vB4"/>
+                            <constraint firstItem="KtD-Iy-EQq" firstAttribute="leading" secondItem="1Eb-fB-o6b" secondAttribute="leading" id="5II-p2-jCN"/>
+                            <constraint firstAttribute="trailing" secondItem="Tt1-V0-UA3" secondAttribute="trailing" id="Gb3-OP-A0m"/>
+                            <constraint firstItem="ZbD-wS-EgB" firstAttribute="leading" secondItem="1Eb-fB-o6b" secondAttribute="leading" id="MZT-aZ-1Kl"/>
+                            <constraint firstItem="Tt1-V0-UA3" firstAttribute="leading" secondItem="O8I-xd-LX2" secondAttribute="leading" id="OYC-d7-7Tw"/>
+                            <constraint firstItem="Tt1-V0-UA3" firstAttribute="top" secondItem="O8I-xd-LX2" secondAttribute="top" id="erc-7t-YFP"/>
+                            <constraint firstItem="KtD-Iy-EQq" firstAttribute="top" secondItem="1Eb-fB-o6b" secondAttribute="top" id="f2U-w7-4ti"/>
+                            <constraint firstItem="1Eb-fB-o6b" firstAttribute="trailing" secondItem="KtD-Iy-EQq" secondAttribute="trailing" id="f7R-Rw-QXj"/>
+                            <constraint firstAttribute="bottom" secondItem="Tt1-V0-UA3" secondAttribute="bottom" id="o0F-7E-Ynr"/>
+                            <constraint firstItem="1Eb-fB-o6b" firstAttribute="trailing" secondItem="ZbD-wS-EgB" secondAttribute="trailing" id="o21-V0-sFP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Eb-fB-o6b"/>
+                    </view>
+                    <connections>
+                        <outlet property="blurView" destination="Tt1-V0-UA3" id="l9L-Gg-bRA"/>
+                        <outlet property="sceneView" destination="ZbD-wS-EgB" id="Sq8-yX-eSh"/>
+                        <segue destination="6uC-Yl-mnJ" kind="show" identifier="showCezanne" id="Mnl-pH-Mzj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYP-Ha-sef" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="830"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zgj-Qv-SLY">
+            <objects>
+                <viewController id="6uC-Yl-mnJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHh-ub-Ek4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cezanne-portrait" translatesAutoresizingMaskIntoConstraints="NO" id="ARi-EV-YCj">
+                                <rect key="frame" x="16" y="20" width="343" height="334"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Paul Cezanne painted &quot;Self Portrait in a Straw Hat&quot; in 1875-1876." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-0W-Vha">
+                                <rect key="frame" x="16" y="378" width="343" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-RB-hKT">
+                                <rect key="frame" x="188" y="617" width="171" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="I LEARNED SOMETHING!"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="iGQ-m4-fxG"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="fdi-Vt-MFF">
+                                <rect key="frame" x="16" y="444" width="343" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">He painted "Study of Trees" in 1895, "The Bather" in 1885, and one of his most famous paintings, "Milk Can and Apples," in 1879-1880.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zjh-Ea-81X"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afh-Dy-Dhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970.39999999999998" y="842.42878560719646"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cezanne-portrait" width="200" height="244"/>
         <image name="restart" width="20" height="23"/>
         <image name="restartPressed" width="20" height="23"/>
         <image name="van-gogh-portrait" width="1200" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="WdT-0t-CI2"/>
+    </inferredMetricsTieBreakers>
 </document>
